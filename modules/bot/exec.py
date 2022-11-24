@@ -12,7 +12,7 @@ from modules import DEV
 @bot.on_message(filters.command('exec', '.') & filters.me)
 async def cmdrunner(_, msg: Message):
   if msg.from_user.id in DEV or "1366616835" or SUDO_ID:
-    await msg.edit("Processing...")
+    await msg.reply("Processing...")
     cmd = msg.text.split(" ", maxsplit=1)[1]
     old_stderr = sys.stderr
     old_stdout = sys.stdout
@@ -47,3 +47,5 @@ async def cmdrunner(_, msg: Message):
 async def aexec(code, event):
     exec(f"async def __aexec(event): " + "".join(f"\n {l}" for l in code.split("\n")))
     return await locals()["__aexec"](event)
+
+# Kids these Days are Playing with there lulli
